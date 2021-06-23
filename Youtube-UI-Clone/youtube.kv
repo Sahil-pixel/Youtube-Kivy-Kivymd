@@ -1,0 +1,291 @@
+#:import Vector kivy.vector.Vector
+<MainScreen>:
+    BoxLayout:
+        orientation: 'vertical'
+        BoxLayout:
+            padding: [5, 5,5, 5]
+            size_hint_y: None
+            height: '48dp'
+            #MDIconButton:
+            #    icon: 'youtube'
+
+            Image:
+                source: 'assets/yicn.png'
+                size_hint_x: None
+                width: 50
+                # canvas.after:
+                #     Color:
+                #         rgba:[1,0,0,1]
+                #     Rectangle:
+                #         pos:self.pos
+                #         size:self.size
+            MDLabel:
+                text: 'YouTube'
+                halign: "left"
+                font_size: '30sp'
+            
+                font_name: 'assets/kenyan-coffee_regular.ttf'
+
+            MDIconButton:
+                icon: 'cast'
+            MDIconButton:
+                icon:'bell'
+            MDIconButton:
+                icon:'magnify'
+                id:_ix
+
+            RoundedImage:
+                size_hint: (None, None)
+                size:_ix.size
+                source:'assets/logo.png'
+        MDSeparator:
+            height: "1dp"
+        ScrollView:
+            do_scroll_y: False
+            size_hint_y: None
+            height: '48dp'
+            bar_width:0
+
+
+
+            BoxLayout:
+                padding: [5, 5,5, 5]
+                size_hint_y: None
+                height: '48dp'
+                size_hint_x: None
+                width:self.minimum_width
+                spacing: 5
+
+                MDRectangleFlatIconButton:
+                    icon: "compass"
+                    text: "Explore"
+                    theme_text_color: "Custom"
+                    text_color: 1, 1, 1, 1
+                    line_color: 1, 1, 1, 0.1
+                    icon_color: 1, 1, 1, 1
+                Widget:
+                    size_hint_x:None
+                    width:5
+                MDSeparator:
+                    orientation: 'vertical'
+                    height: "10dp"
+                Widget:
+                    size_hint_x: None
+                    width: 25
+                #MDChooseChip:
+                #    orientation: 'bt-rl'
+                MChip:
+                    text:"KivyMD"
+
+                   
+                MChip:
+                    text:'Python'
+                    #group: "chips"
+                    #size_hint_x: None
+                    #width:self.texture_size[0]
+   
+                MChip:
+                    text:"Music"
+                    #group: "chips"
+                    #size_hint_x: None
+                    #width:self.texture_size[0]
+   
+                MChip:
+                    text: 'Video Song'
+                    #group: "chips"
+                    #size_hint_x: None
+                 
+   
+
+
+
+        ScrollView:
+            bar_width:0
+            BoxLayout:
+
+                orientation: 'vertical'
+                size_hint_y: None
+                height: self.minimum_height
+                Plate:
+                    size_hint_y: None
+                    _image:"assets/feature.jpg"
+                    _rimage:"assets/logo.png"
+                    _channel_name:'Sk Sahil - 64 views - 1 day ago'
+                    _time:"39:28"
+                    height: 250
+                Plate:
+                    size_hint_y: None
+                    height: 250
+                    _image:"assets/feature2.jpg"
+                    _rimage:"assets/logo.png"
+                    _channel_name:'Sk Sahil - 326 views - 1 week ago'
+                    _time:'20:10'
+                    _video_title:'Unity Ads With Kivy or Kivymd Android Apps #kivy,#python,#unityads ,#android,#buildozer,#kivymd'
+
+                Plate:
+                    size_hint_y: None
+                    height: 250
+                    _image:"assets/admob.jpg"
+                    _rimage:"assets/logo.png"
+                    _time:"18:22"
+                    _channel_name:'Sk Sahil - 287 views - 1 week ago'
+                    _video_title:"Admob ads in Kivy or Kivymd Android Apps,#kivy,#admob,#kivymd,#android,#python"
+        BoxLayout:
+            size_hint_y: None
+            height: 100
+
+            MDBottomNavigation:
+            
+                
+                MDBottomNavigationItem:
+                    name: "screen 1"
+                    icon:'home'
+                    text:'Home'
+                    text_color_normal: 1, 1, 1, 1
+                MDBottomNavigationItem:
+                    name: "screen 1"
+                    icon:'sass'
+                    text:'Shorts'
+                    text_color_normal: 1, 1, 1, 1
+                MDBottomNavigationItem:
+                    name: "screen 1"
+                    icon:'plus-circle-outline'
+                    #text:'Home'
+                    text_color_normal: 1, 1, 1, 1
+                MDBottomNavigationItem:
+                    name: "screen 1"
+                    icon:'youtube-subscription'
+                    text:'Subcriptions'
+                    text_color_normal: 1, 1, 1, 1
+                MDBottomNavigationItem:
+                    name: "screen 1"
+                    icon:'youtube-tv'
+                    text:'Library'
+                    text_color_normal: 1, 1, 1, 1
+                    text_color_active: 1, 1, 1, 1
+
+
+
+
+
+
+    
+
+<MChip@MDChip>:
+    selected_chip_color:[1,1,1,0.5]
+    icon:''
+
+    size_hint_y: 1
+    color:0,0,0,1
+
+
+<Chip>:
+    width:self.texture_size[0]
+    background_normal: 'assets/trans.png'
+    background_selected: 'assets/trans.png'
+    background_down: 'assets/trans.png'
+    canvas.before:
+        Color:
+            rgba:root.dc
+        RoundedRectangle:
+            pos:self.pos
+            size:self.size
+    on_state:root.call()
+        
+
+        
+<RoundedImage@Widget>:
+    source:None
+    canvas.after:
+        Color:
+            rgba:[1,1,1,1]
+        Ellipse:
+            pos:self.pos
+            size:Vector(self.size)-Vector(10,10)
+            source: root.source
+
+    
+    
+<Plate>:
+    id:plt
+    orientation: 'vertical'
+    focus_behavior: True
+    #ripple_behavior: True
+    spacing: 10
+    padding: [0, 2, 0,10]
+    RelativeLayout:
+        Image:
+            id:_img
+            canvas:
+                Rectangle:
+                    pos:self.pos
+                    size:root.width,self.height
+                    source:root._image
+
+
+        Label:
+            
+            pos_hint: {'center_x':0.96 ,'center_y ':0.5}
+            #size_hint:(None,None)
+            #size:self.texture_size
+            text:root._time
+            
+            #color: (1, 1, 1, 1)
+            size_hint:None,None
+            height: 10+5
+            
+            width:self.texture_size[0]+5
+            #bold: 1
+            canvas.before:
+                Color:
+                    rgba:[0,0,0,1]
+                Rectangle:
+                    #pos:self.pos
+                    pos:self.pos
+                    size:self.size
+    
+    BoxLayout:
+        size_hint_y: None
+        height: 50
+        RoundedImage:
+            size_hint_x: None
+            width: 50
+            source:root._rimage
+        BoxLayout:
+            orientation: 'vertical'
+            BoxLayout:
+                MDLabel:
+                    text: root._video_title
+                    shorten_from:'right'
+                    shorten:True
+                    bold:True
+                    #theme_text_color: "Secondary"
+                    size_hint_y: None
+                    height: self.texture_size[1]
+                MDIconButton:
+                    icon:'dots-vertical'
+                    id:_mibc
+                    on_release:root.open_menu(_mibc)
+
+            BoxLayout:
+                MDLabel:
+                    text: root._channel_name
+                    #bold:True
+                    theme_text_color: "Secondary"
+                    size_hint_y: None
+                    height: self.texture_size[1]
+                    font_size: '12sp'
+
+
+
+
+            
+
+    #         MDSeparator:
+    #             height: "1dp"
+
+    #         MDLabel:
+    #             text: "Body"
+    #             size_hint_y: None
+    #             height: self.texture_size[1]
+    # 
