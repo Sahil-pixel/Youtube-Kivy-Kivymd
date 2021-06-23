@@ -18,7 +18,9 @@ from kivy.uix.boxlayout import BoxLayout
 from kivy.uix.screenmanager import Screen
 from kivy.uix.togglebutton import ToggleButton
 from kivymd.uix.card import MDCard
-
+'''
+I am not putting all   images in assets folder .first read the code and place your own images. 
+'''
 class Chip(ToggleButton):
     dc=ListProperty([0,0,0,1])
     def __init__(self,**k):
