@@ -1,0 +1,14 @@
+
+<ScanScreen>:
+	BoxLayout:
+		orientation: 'vertical'
+		ScanAnalyze:
+			id:preview
+			aspect_ratio: '16:9'
+			extracted_data:root.got_result
+
+		MDLabel:	
+			size_hint_y: None
+			height:'130dp'
+			id:ti
+
