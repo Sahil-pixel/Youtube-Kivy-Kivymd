@@ -1,0 +1,32 @@
+<Main>:
+	canvas.before:
+		Color:
+			rgba:[1,1,1,1]
+    	Rectangle:
+    		pos:self.pos
+    		size:self.size
+
+	
+	
+    
+<Ball>:
+	size:(30,30)
+	pos:(500,500)
+	canvas.before:
+		Color:
+			rgba:[1,0,0,1]
+    	Ellipse:
+    		pos:self.pos
+    		size:self.size
+
+
+
+<Brick>:
+	canvas.before:
+		Color:
+			rgba:[0,0,1,1]
+    	Rectangle:
+    		pos:self.pos
+    		size:self.size
+
+
