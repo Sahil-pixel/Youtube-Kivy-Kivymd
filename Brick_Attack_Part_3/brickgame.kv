@@ -1,0 +1,53 @@
+<Main>:
+	canvas.before:
+		Color:
+			rgba:[1,1,1,1]
+    	Rectangle:
+    		pos:self.pos
+    		size:self.size
+    Paddel:
+    	id:paddel
+    	pos:(500,0)
+    	size_hint:(None,None)
+    Label:
+    	pos_hint:{"center_x":0.5,"center_y":0.5}
+    	size:(200,50)
+    	size_hint:None,None
+    	id:lbl
+    	color:[0,0,0,0.5]
+    	font_size:"25sp"
+
+	
+	
+<Paddel>:
+	size:(80,30)
+	pos:(500,0)
+	canvas.before:
+		Color:
+			rgba:[0,1,0,1]
+    	RoundedRectangle:
+    		radius:[10,]
+    		pos:self.pos
+    		size:self.size
+
+<Ball>:
+	size:(15,15)
+	pos:(50,50)
+	canvas.before:
+		Color:
+			rgba:[1,0,0,1]
+    	Ellipse:
+    		pos:self.pos
+    		size:self.size
+
+
+
+<Brick>:
+	canvas.before:
+		Color:
+			rgba:[0,0,1,1]
+    	Rectangle:
+    		pos:self.pos
+    		size:self.size
+
+
