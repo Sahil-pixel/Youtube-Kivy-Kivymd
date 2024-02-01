@@ -1,0 +1,47 @@
+<Otameshi>
+    BoxLayout:
+        orientation:'vertical'
+        size:root.size
+        padding:(100,100,100,300) # padding:(left, top, right, bottom)
+        Label:
+            id: lab1
+            text: self.text
+            font_size: 80
+        Button:
+            size: 100, 200
+            text: 'hide banner'
+            pos: 0,0
+            font_size: 80
+            on_release:
+                app.hide_banner()
+        Button:
+            size: 100, 200
+            text: 'show banner'
+            pos: 0,0
+            font_size: 80
+            on_release:
+                app.show_banner()
+        Button:
+            size: 100, 200
+            text: 'show interstitial'
+            pos: 0,0
+            font_size: 80
+            on_release:
+                app.show_interstitial()
+        Button:
+            size: 100, 200
+            text: 'show rewarded video'
+            pos: 0,0
+            font_size: 80
+            on_release:
+                app.show_rewarded_ad()
+        Button:
+            size: 100, 200
+            text: 'load ads'
+            pos: 0,0
+            font_size: 80
+            on_press:
+                root.ids['lab1'].text='o'
+            on_release:
+                root.ids['lab1'].text='';
+                app.load_ads()
