@@ -1,3 +1,4 @@
+#Credit KivySchool 
 from kivy.app import App
 from kivy.properties import DictProperty, NumericProperty, ListProperty
 from kivy.uix.effectwidget import AdvancedEffectBase, EffectWidget
